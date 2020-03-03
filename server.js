@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 //const bcrypt = require("bcrypt-nodejs");
+const cors = require("cors");
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 
 const database = {
   users: [
@@ -84,6 +86,6 @@ app.put("/image", (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("App is running");
 });
